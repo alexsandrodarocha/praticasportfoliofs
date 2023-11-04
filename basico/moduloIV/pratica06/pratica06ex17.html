@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 06 - Exercício 17</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 17. Escreva um algoritmo que armazene o número total de eleitores de
+    // um município, o número de votos brancos, nulos e válidos. Calcular
+    // e escrever o percentual que cada um representa em relação ao
+    // total de eleitores. O algoritmo deve fazer uma validação para que as
+    // porcentagens dos votos armazenados (brancos, nulos e válidos)
+    // respeitem o limite do número total de eleitores, ou seja, garantir que
+    // a soma dos votos brancos, nulos e válidos não seja maior que o
+    // número total de eleitores.
+
+    let eleitores = Number(prompt("Informe o número de eleitores: "))
+    let votosBrancos = Number(prompt("Informe o número de votos em branco: "))
+    let votosNulos = Number(prompt("Informe o número de votos nulos: "))
+    let votosValidos = eleitores - (votosBrancos + votosNulos)
+
+    votosBrancos = (votosBrancos / eleitores) * 100
+    votosNulos = (votosNulos / eleitores) * 100
+    votosValidos = (votosValidos / eleitores) * 100
+
+    document.write(`Total de Eleitores do Municipio: ${eleitores}<br>`)
+    document.write(`Votos Brancos: ${votosBrancos}% <br>`)
+    document.write(`Votos Nulos: ${votosNulos}% <br>`)
+    document.write(`Votos Validos: ${votosValidos}% <br>`)
+
+</script>
+
+</html>

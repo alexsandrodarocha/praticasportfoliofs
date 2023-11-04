@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 06 - Exercício 18</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 18. Uma loja de eletrodomésticos estabeleceu as seguintes
+// modalidades de pagamento para a venda de suas mercadorias:
+
+// Escreva um algoritmo que armazene o preço de tabela e o número
+// de vezes em que o pagamento será feito. Calcule o valor de cada
+// parcela e o preço total da compra e imprima no console.
+
+let preco = Number(prompt("Informe o preço de tabela: "))
+let parcelas = Number(prompt("Informe em quantas vezes o pagamento será feito: "))
+let valorParcelas = 0
+
+if (parcelas === 1) {
+    preco = preco * 0.975
+    valorParcelas = preco
+} else if (parcelas >= 2 && parcelas <= 5) {
+    valorParcelas = preco / parcelas
+} else if (parcelas >= 6 && parcelas <= 10) {
+    preco += preco * 0.06
+    valorParcelas = preco / parcelas
+} else if (parcelas >= 11 && parcelas <= 15) {
+    preco += preco * 0.13
+    valorParcelas = preco / parcelas
+} else {
+    document.write("Informações inválidas! [Pagamento em até 15 vezes]")
+}
+document.write(`O valor total da compra será R$${preco.toFixed(2)}, e a forma de pagamento será ${parcelas} vezes de R$${valorParcelas.toFixed(2)}`)
+
+</script>
+
+</html>

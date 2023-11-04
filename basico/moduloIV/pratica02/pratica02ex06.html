@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 02 - Exercício 06</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 6. Escreva um algoritmo que solicite 2 números e uma operação
+// matemática. O algoritmo deve realizar o cálculo com os 2 números
+// digitados conforme a operação informada.
+
+document.write("6. ");
+let n1 = Number(prompt("Informe o primero número: "));
+let n2 = Number(prompt("Informe o segundo número: "));
+let operacao = prompt("Informe a operação matemática desejada (+, -, /, *): ");
+
+switch (operacao) {
+    case "+":
+        document.write(`${n1} ${operacao} ${n2} é igual a ${n1+n2}`);
+        break;
+        case "-":
+        document.write(`${n1} ${operacao} ${n2} é igual a ${n1-n2}`);
+        break;
+        case "/":
+        document.write(`${n1} ${operacao} ${n2} é igual a ${n1/n2}`);
+        break;
+        case "*":
+        document.write(`${n1} ${operacao} ${n2} é igual a ${n1*n2}`);
+        break;
+        default:
+            document.write(`Opção inválida!`);
+            break;
+}
+document.write("<br><br>");
+</script>
+
+</html>

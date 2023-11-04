@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 01 - Exercício 07</title>
+</head>
+
+<body>
+
+</body>
+<script>
+/* 7. Desenvolva um algoritmo para ler o número total de eleitores de um
+município, o número de votos brancos, nulos e válidos. Calcular e
+escrever o percentual que cada um representa em relação ao total
+de eleitores. */
+
+const votosTotal = 456
+const votosBranco = 45
+const votosNulo = 87
+
+
+const brancoPerCent = (votosBranco/votosTotal)*100
+const nuloPerCent = (votosNulo/votosTotal)*100
+const votosValidos = ((votosTotal - (votosNulo + votosBranco))/votosTotal)*100
+document.write(`7. Percentual de votos válidos: ${votosValidos.toFixed(2)}% <br> Percentual de votos válidos: ${nuloPerCent.toFixed(2)}% <br> Percentual de votos em branco: ${brancoPerCent.toFixed(2)}% <br><br>`)
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 02 - Exercício 07</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 7. Faça um algoritmo que simule um caixa eletrônico. Nesse algoritmo
+// a conta do usuário deve ser criada já com um saldo positivo. O
+// usuário precisa informar a quantidade de dinheiro que deseja
+// retirar, esse valor deve ser um número positivo, múltiplo de 5 e
+// menor do que o saldo. Cada saque eletrônico cobra uma taxa de
+// R$4.50. Ao final deve ser informado o saldo da conta caso dê tudo
+// certo com o saque, e se o usuário informar um valor maior que o
+// saldo deve ser informado ao usuário que o mesmo não tem dinheiro
+// suficiente em conta para realizar o saque.
+// OBS: Na verificação se o valor do saque é maior que o saldo deve
+// ser considerado e também contabilizado o valor da taxa a ser
+// cobrada pelo saque. Ou seja, o valor a ser sacado somado ao valor
+// da taxa do saque não pode ser maior que o saldo disponível.
+
+document.write("7. ");
+let criarConta = Number(prompt("Informe o valor que deseja depositar para criar sua conta: "));
+let valorSaque = Number(prompt("Informe o valor que deseja sacar da sua conta (apenas valores múltiplos de R$5,00): "));
+let saldoConta = criarConta
+const taxa = 4.50
+
+if (valorSaque % 5 === 0) {
+    if (valorSaque > (saldoConta - taxa)) {
+        document.write("Saldo insufuciente!");
+    } else if (valorSaque < 0) {
+        document.write("Valor inválido! Informe um valor de saque positivo.");
+    } else {
+        saldoConta = saldoConta - valorSaque - taxa
+        document.write(`Saque realizado com sucesso! Seu saldo atual é de R$${saldoConta}`);
+    }
+} else {
+    alert("Valor informado não é multiplo de 5! Favor informar um valor válido.");
+}
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 01 - Exercício 03</title>
+</head>
+
+<body>
+
+</body>
+<script>
+/* 3. Crie três variáveis, na primeira variável coloque o total de uma
+compra, por exemplo 149.90. Na segunda variável coloque a
+quantidade de parcelas, por exemplo 2. Na terceira variável coloque
+o valor da parcela. Apresente no documento html as seguintes
+informações:
+"O valor total da compra foi R$_,_"
+"Forma de pagamento: _x de R$_,_" */
+
+const total = 200.50
+const parcelas = 24
+const valorParcela = total / parcelas
+document.write(`3. O valor total da compra foi R$${total.toFixed(2).toString().replace('.',',')} <br/>`)
+document.write(`Forma de pagamento: ${parcelas}x de R$${valorParcela.toFixed(2).toString().replace('.',',')} <br/><br/>`)
+</script>
+
+</html>

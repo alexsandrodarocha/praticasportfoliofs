@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 05 - Exercício 05</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 5. Faça um algoritmo que pergunte a distância que um passageiro
+// deseja percorrer em Km. Calcule o preço da passagem, cobrando
+// R$0.50 por Km para viagens até 200Km e R$0.45 para viagens mais
+// longas.
+
+const distancia = Number(prompt("Informe a distancia em KM a percorrer: "))
+
+if (distancia <= 200) {
+    document.write(`Valor da passagem é R$${(distancia*0.5).toFixed(2).replace(",",".")}`)
+} else {
+    document.write(`Valor da passagem é R$${(distancia*0.45).toFixed(2).replace(",",".")}`)
+}
+
+</script>
+
+</html>

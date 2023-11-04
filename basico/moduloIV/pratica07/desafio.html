@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let matriz = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ]
+
+    // for (let i = 0; i < matriz.length; i++) {
+    //     for(let j = 0; j < matriz[i].length; j++) {
+    //         document.write(matriz[i][j])
+    //     }
+    // }
+
+    // for(let linha of matriz) {
+    //     for(let elemento of linha) {
+    //         document.write(`For of: ${elemento} `)
+    //     }
+    // }
+
+    // let rebaixamento = [1991, 2004, 2021]
+    // for (let ano of rebaixamento) {
+    //     document.write(`Anos que o Grêmio foi rebaixado ${ano}`) 
+    // }
+
+//     Crie um programa que permita ao usuário inserir as notas de alunos (de 0 a 10) em uma disciplina. O programa deve
+// continuar pedindo as notas até que o usuário indique que não deseja mais inserir notas. Em seguida, o programa deve
+// calcular a média das notas e informar se o aluno foi aprovado (média maior ou igual a 7) ou reprovado.
+
+let notas = []
+let continuar = true
+let soma = 0
+while (continuar) {
+    let nota = Number(prompt("Informe a nota do aluno (nota de 0 a 10): "))
+
+    if (!isNaN(nota) && nota >= 0 && nota <= 10) {
+        notas.push(nota)
+    } else {
+        alert('Nota inválida!')
+    }
+
+    continuar = confirm('Deseja incluir mais notas?')
+}
+
+for (let nota of notas) {
+    soma += nota
+}
+
+const media = soma / notas.length
+
+if (media >= 7) {
+    document.write(`Aprovado com média: ${media.toFixed(2)}`)
+} else {
+    document.write(`Reprovado com média: ${media.toFixed(2)}`)
+}
+
+
+</script>
+</html>

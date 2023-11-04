@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 04 - Exercício 05</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 5. Faça um programa usando a estrutura “for” que leia um número
+// inteiro positivo e mostre na tela uma contagem de 0 até o valor
+// digitado:
+// Ex: Digite um valor: 9
+// Contagem: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, FIM!
+
+const contagem = Number(prompt("Informe um número para a contagem: "));
+document.write(`Contagem: `)
+for (let i = 0; i <= contagem; i++) {
+    document.write(`${i}, `)
+}
+document.write(`FIM!`)
+</script>
+
+</html>

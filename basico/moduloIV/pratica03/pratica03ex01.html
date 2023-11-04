@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 04 - Exercício 01</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 1. Desenvolva um algoritmo que leia a altura de 15 pessoas. Este
+// programa deverá calcular e mostrar:
+// a. A menor altura do grupo;
+// b. A maior altura do grupo;
+
+let altura;
+let maior = 0;
+let menor = 9999;
+
+for (let i = 1; i <= 15; i++) {
+    altura = Number(prompt("Informe a altura em centimetros: "));
+    if (altura > maior) {
+        maior = altura
+    }
+
+    if (altura < menor) {
+        menor = altura
+    }
+}
+document.write(`A menor altura do grupo é ${menor} centimetros! <br>`);
+document.write(`A maior altura do grupo é ${maior} centimetros! <br>`);
+</script>
+
+</html>

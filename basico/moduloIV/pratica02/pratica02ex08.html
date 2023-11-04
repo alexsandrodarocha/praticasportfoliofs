@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 02 - Exercício 08</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 8. Faça um algoritmo que leia a idade e peso de um atleta e imprima
+// a sua categoria, de acordo com a seguinte tabela:
+
+document.write("8. ");
+const idade = Number(prompt("Informe a sua idade: "));
+const peso = Number(prompt("Informe o seu peso: "));
+
+if (idade <= 12) {
+    document.write("Categoria Infantil!");
+} else if (idade >= 12 && idade <= 16) {
+    if (peso <= 40) {
+        document.write("Categoria Juvenil Leve!");
+    } else {
+        document.write("Categoria Juvenil Pesado!");
+    }
+} else if (idade >= 17 && idade <= 24) {
+    if (peso <= 45) {
+        document.write("Categoria Sênior Leve!");
+    } else if (peso > 45 && peso <= 60) {
+        document.write("Categoria Sênior Médio!");
+    } else {
+        document.write("Categoria Sênior Pesado!");
+    }
+} else {
+    document.write("Veterano!");
+}
+
+document.write("<br><br>");
+</script>
+
+</html>

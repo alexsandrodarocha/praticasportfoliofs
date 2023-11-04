@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 05 - Exercício 01</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //     1. Faça um algoritmo que leia a idade de vários alunos de uma turma.
+    // O programa vai parar quando for digitada a idade 999. No final,
+    // mostre quantos alunos existem na turma e qual é a média de idade
+    // do grupo.
+    let idade = 0;
+    let contador = 0;
+    let totalIdade = 0;
+    while (idade != 999) {
+        idade = Number(prompt("Digite a idade: "))
+        if (idade != 999) {
+            totalIdade += idade;
+            contador++;
+        }
+    }
+    document.write(`Média: ${totalIdade/contador} <br>`)
+    document.write(`Total de alunos: ${contador}`)
+</script>
+
+</html>

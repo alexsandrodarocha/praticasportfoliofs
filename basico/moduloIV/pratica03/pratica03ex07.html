@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 04 - Exercício 06</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 7. Desenvolva um algoritmo que leia 10 números, calcule e escreva a
+// média aritmética dos valores lidos, a quantidade de valores
+// positivos, a quantidade de valores negativos e o percentual de
+// valores negativos e positivos.
+
+
+let soma = 0
+let positivos = 0
+let negativos = 0
+
+for (let i = 1; i <= 10; i++) {
+    let numero = Number(prompt("Insira um numero: "))
+    soma += numero
+    if (numero > 0) {
+        positivos++
+    } else {
+        negativos++
+    }
+}
+
+let media = soma / 10
+let positivoPerCent = (positivos / 10) * 100
+let negativoPerCent = (negativos / 10) * 100
+
+document.write(`A média dos numeros inseridos é ${media}<br> Entre os numeros, há ${positivos} positivo(s) e ${negativos} negativo(s).
+<br> Isto representa ${positivoPerCent}% de numeros positivos e ${negativoPerCent}% de numeros negativos <br>`);
+</script>
+
+</html>

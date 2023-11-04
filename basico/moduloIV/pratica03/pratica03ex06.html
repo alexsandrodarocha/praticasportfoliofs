@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 04 - Exercício 06</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 6. Desenvolva um algoritmo que mostre uma contagem regressiva de
+// 30 até 1, marcando os números que forem primos, exatamente
+// como mostrado abaixo:
+// 30 [29] 28 27 26 25 24 [23] 22 21 20 [19] 18 [17] 16...
+
+let contagem = ""
+for (let i = 30; i >= 1; i--) {
+    let primo = true;
+    for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+            primo = false;
+            break;
+        }
+    }
+    if (primo) {
+        contagem += `[${i}] ,`
+    } else {
+        contagem += i + ","
+    }
+}
+document.write(`${contagem}`)
+</script>
+
+</html>

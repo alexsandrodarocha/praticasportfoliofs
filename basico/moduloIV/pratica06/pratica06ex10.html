@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 06 - Exercício 10</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 10. Tendo como entrada a altura e o sexo (codificado da seguinte
+// forma: 1 para sexo feminino e 2 para sexo masculino) de uma
+// pessoa, construa um programa que calcule e mostre seu peso ideal,
+// utilizando as seguintes fórmulas:
+// - para homens: (72.7 * Altura) – 58
+// - para mulheres: (62.1 * Altura) – 44.7
+
+const altura = Number(prompt("Informe sua altura [em centimetros]: "))
+const sexo = Number(prompt("Informe seu sexo [1 -> FEMININO | 2 -> MASCULINO]: "))
+const pesoIdealF = (62.1 * altura/100) - 44.7
+const pesoIdealM = (72.7 * altura/100) - 58
+
+if (sexo === 1) {
+    document.write(`Seu peso ideal é ${pesoIdealF.toFixed(2)}`)
+} else if (sexo === 2) {
+    document.write(`Seu peso ideal é ${pesoIdealM.toFixed(2)}`)
+} else {
+    document.write(`Dados inválidos!`)
+}
+
+</script>
+</html>

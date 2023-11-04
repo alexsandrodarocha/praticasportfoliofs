@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 05 - Exercício 03</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 3. Crie um algoritmo que leia o valor inicial da contagem, o valor final e
+// o incremento, mostrando em seguida todos os valores no intervalo:
+// Ex:
+// Digite o primeiro Valor: 3
+// Digite o último Valor: 10
+// Digite o incremento: 2
+// Contagem: 3 5 7 9 Acabou!
+
+const inicial = Number(prompt("Insira o valor inicial: "))
+const final = Number(prompt("Insira o valor final: "))
+const incremento = Number(prompt("Insira o valor de incremento: "))
+document.write(`Contagem: `)
+for(let i = inicial; i <= final; i+=incremento) {
+    document.write(`${i} `)
+}
+document.write(`Acabou!`)
+
+
+</script>
+
+</html>

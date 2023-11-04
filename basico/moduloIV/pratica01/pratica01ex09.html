@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 01 - Exercício 09</title>
+</head>
+
+<body>
+
+</body>
+<script>
+/* 9. As maçãs desta estação custam R$0,30 se forem compradas
+menos do que uma dúzia, e R$0,25 se forem compradas pelo menos
+doze. Desenvolva um algoritmo que leia o número de maçãs
+compradas, calcule e escreva o valor total da compra. */
+
+const macas = 20
+
+if (macas < 12 ) {
+    const total = macas * 0.3
+    document.write(`9. Valor total da compra R$${total.toFixed(2)}`)
+} else {
+    const total = macas * 0.25
+    document.write(`9. Valor total da compra R$${total.toFixed(2)}`)
+}
+
+document.write(`<br><br>`)
+</script>
+
+</html>

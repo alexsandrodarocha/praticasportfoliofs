@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 06 - Exercício 09</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 9. Informe um valor a uma variável e imprima no console se o número
+// é primo.
+
+let num = Number(prompt("Informe um número para saber se ele é primo: "))
+let primo = true
+    for (let i = 2; i < num; i ++) {
+        if (num % i === 0) {
+            primo = false
+            break
+        } else {
+            primo = true
+        }
+    }
+    if (primo) {
+        document.write(`${num} é primo.`);
+    } else {
+        document.write(`${num} não é primo.`);
+    }
+    
+
+</script>
+</html>

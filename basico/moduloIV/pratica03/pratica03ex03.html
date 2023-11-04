@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 04 - Exercício 03</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 3. Escreva um algoritmo que faça a tabuada de um número e
+// apresente o resultado de acordo com o modelo a seguir, sabendo
+// que o multiplicando deverá ser fornecido pelo usuário (n) e a
+// quantidade de iterações também (i).
+
+const n = Number(prompt("Informe o número da tabuada que deseja: "));
+const i = Number(prompt("Informe o número de iteração da tabuada: "));
+
+for (let j = 1; j <= i; j++) {
+    document.write(`${j} x ${n} = ${j * n} <br>`)
+}
+</script>
+
+</html>

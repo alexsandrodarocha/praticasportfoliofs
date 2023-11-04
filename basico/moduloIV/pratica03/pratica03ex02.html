@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 04 - Exercício 02</title>
+</head>
+
+<body>
+
+</body>
+<script>
+// 2. Pedro tem 1,50m de altura e cresce 2 centímetros por ano, enquanto
+// Lucas tem 1,10m de altura e cresce 3 centímetros por ano.
+// Construa um algoritmo que calcule e imprima quantos anos serão
+// necessários para que:
+// a. Lucas e Pedro tenham o mesmo tamanho;
+// b. Lucas seja maior que Pedro.
+
+let pedroA = 150;
+let lucasA = 110;
+let anos = 0;
+do {
+    pedroA += 2
+    lucasA += 3
+    anos += 1;
+} while (pedroA >= lucasA)
+document.write(`Lucas e Pedro terão o mesmo tamanho em ${anos - 1} anos!`);
+document.write(`Lucas será maior que Pedro em ${anos} anos!`);
+</script>
+
+</html>
