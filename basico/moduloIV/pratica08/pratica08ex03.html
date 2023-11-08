@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 08 - Exercício 03</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 3. Desenvolva um algoritmo que preenche um vetor com os 4
+// primeiros números perfeitos.
+let soma2 = []
+let somas = 0
+for (let i = 1; soma2.length < 4; i++) {
+    for (let j = 1; j < i; j++) {
+        if (i % j === 0) {
+            somas += j
+        }
+    }
+    if (i === somas) {
+        soma2.push(i)
+    }
+    somas = 0
+}
+document.write(`Os primeiros ${soma2.length} números perfeitos são: ${soma2} <br><br>`)
+
+</script>
+</html>

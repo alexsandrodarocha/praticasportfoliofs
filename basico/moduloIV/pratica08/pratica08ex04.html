@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 08 - Exercício 04</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 4. Desenvolva um algoritmo que declare uma lista de 10 números e
+// solicite um número para o usuário e no final informe se o número
+// que o usuário digitou está dentro da lista ou não.
+
+let numeros = [1,2,3,4,5,6,7,8,9,10]
+let numeroDigitado = Number(prompt("Digite um número: "))
+let acertou = false
+for (let numero of numeros) {
+    if (numero === numeroDigitado) {
+        acertou = true
+        break
+    }
+}
+
+if(acertou === true) {
+    document.write(`Você acertou! O número é ${numeroDigitado} está dentro da lista.`)
+} else {
+    document.write(`Você não acertou nenhum número da lista!`)
+}
+
+</script>
+</html>

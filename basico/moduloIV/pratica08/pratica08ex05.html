@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 08 - Exercício 05</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 5. Escreva um algoritmo que solicite ao usuário a entrada de 5 nomes,
+// e que exiba a lista desses nomes na tela. Após exibir essa lista, o
+// programa deve mostrar também os nomes na ordem inversa em
+// que o usuário os digitou.
+
+// Ex:
+// Entrada: Édson, Marcelo, Letícia, Ju, Thobias
+// Saída: Thobias, Ju, Letícia, Marcelo, Édson
+
+let nomes = []
+while (nomes.length < 5) {
+    nomes.push(prompt("Digite os nomes: "))
+}
+document.write(nomes.reverse())
+
+
+</script>
+</html>

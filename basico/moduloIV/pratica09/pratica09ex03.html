@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 09 - Exercício 03</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 3. Crie um objeto para colocar nome e duas notas. Atribua nome e
+    // duas notas para o primeiro objeto, que será nosso primeiro aluno.
+    // Agora crie mais um objeto para colocar informações do nosso
+    // segundo aluno. Mostre as informações de cada aluno no console.
+    // Mostre também a média do primeiro aluno e a média do segundo
+    // aluno. Por fim mostre a média desta turma de 2 alunos.
+
+    const alunos = [
+        {
+            nome: 'Alex',
+            notaUm: 10,
+            notaDois: 9,
+        },
+        {
+            nome: 'Daniel',
+            notaUm: 10,
+            notaDois: 9,
+        },
+    ]
+    document.write(`
+        Aluno 1: ${alunos[0].nome}<br>
+        Nota 1: ${alunos[0].notaUm}<br>
+        Nota 2: ${alunos[0].notaDois}<br>
+        Média: ${(alunos[0].notaUm + alunos[0].notaDois) / 2}<br>
+        Aluno 2: ${alunos[1].nome}<br>
+        Nota 1: ${alunos[1].notaUm}<br>
+        Nota 2: ${alunos[1].notaDois}<br>
+        Média: ${(alunos[1].notaUm + alunos[1].notaDois) / 2}
+        `)
+
+</script>
+
+</html>
