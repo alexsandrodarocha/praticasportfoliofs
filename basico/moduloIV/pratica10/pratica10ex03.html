@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 10 - Exercício 03</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 3. Crie uma função que recebe por parâmetro um valor inteiro e
+// positivo e retorne verdadeiro se o número for primo ou falso se não
+// for.
+
+function verificaNum (n) {
+    for (let i = 2; i < n; i++) {
+        if (n %i === 0 ) {
+            return document.write(`Falso, o numéro ${n} não é primo!<br>`)
+        } else {
+            return document.write(`Verdadeiro, o numéro ${n} é primo!<br>`)
+        }
+    }
+}
+verificaNum(20)
+verificaNum(11)
+
+</script>
+</html>

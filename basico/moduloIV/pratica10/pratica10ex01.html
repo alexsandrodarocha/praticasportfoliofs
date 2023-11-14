@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 10 - Exercício 01</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 1. Crie uma função que recebe 3 notas de um aluno por parâmetro e
+// uma letra. Se a letra for A a função deve calcular a média aritmética,
+// se for P, a média ponderada (peso: 5, 3 e 2).
+
+function calcularMedia (n1, n2, n3, m) {
+    if (m === 'A') {
+        return (n1 + n2 + n3) / 3
+    } else if (m === 'P') {
+        return ((n1*5)+(n2*3)+(n3*2)) / 10
+    }
+}
+document.write(`Nota 1: 10<br>Nota 2: 9<br>Nota 3: 8<br>`)
+document.write(`Média aritmética: ${calcularMedia(10, 9, 8, 'A')}<br>`)
+document.write(`Média ponderada: ${calcularMedia(10, 9, 8, 'P')}<br>`)
+
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 10 - Exercício 04</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 4. Crie uma função que recebe por parâmetro o tempo de duração de
+// uma fábrica expressa em segundos e retorna esse tempo em horas,
+// minutos e segundos.<br>
+// Ex:<br>
+// Entrada: 3672<br>
+// Saída: 1:1:12<br>
+
+function converteSegundos (seg) {
+    const horas = seg / 3600
+    const minutos = (seg - (parseInt(horas)*3600)) / 60
+    const segundos = (seg - (parseInt(horas)*3600) - (parseInt(minutos)*60))
+    return document.write(`Entrada: ${seg}<br>${parseInt(horas)}:${parseInt(minutos)}:${segundos}`)
+}
+converteSegundos(3672)
+
+</script>
+</html>
