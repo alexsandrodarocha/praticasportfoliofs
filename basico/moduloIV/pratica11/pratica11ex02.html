@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 11 - Exercício 02</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+</body>
+<script>
+// 2. James estava criando uma array com as cores do arco-íris, e ele
+// esqueceu algumas cores. As cores padrão de um arco-íris são
+// normalmente listadas nesta ordem: <br>
+// const rainbow = ["Vermelho", "Laranja", "Amarelo", "Verde", "Azul",
+// "Roxo"]; <br>
+// <br>
+// mas James tinha isto: <br>
+// const rainbow = ["Vermelho", "Laranja", "Preto", "Azul"]; <br>
+// <br>
+// Usando somente o método splice insira as cores que faltam na array e
+// remova a cor "Preto", seguindo estes passos: <br>
+// <br>
+// a. Remova "Preto" <br>
+// b. Adicione "Amarelo" e "Verde" <br>
+// c. Adicione "Roxo" <br>
+
+const rainbow = ["Vermelho", "Laranja", "Preto", "Azul"];
+document.write(`Array original:<br> ${rainbow} <br>`)
+const removeAdd = rainbow.splice(2,1,'Amarelo', 'Verde');
+document.write(`Array com a cor 'Preto' removido, e as cores 'Amarelo' E 'Verde' adicionadas:<br> ${rainbow} <br>`)
+const addPurple = rainbow.splice(5,0, 'Roxo');
+document.write(`Array com a cor 'Roxo' adicionada:<br> ${rainbow}<br>`)
+
+</script>
+</html>

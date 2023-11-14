@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 11 - Exercício 01</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+</body>
+<script>
+// 1. Considere o seguinte array: <br>
+// const salarios = [5000.00, 5460.50, 3452.00, 6900.00, 7590.10, 8012.99,
+// 1290.00, 15000.00]; <br>
+// <br>
+// a. Imprima no console o índice do primeiro salário maior que
+// 7.500 utilizando o findIndex <br>
+// b. Crie uma nova lista filtrada com os salários que são maior que
+// 8.000 utilizando o filter
+
+const salarios = [5000.00, 5460.50, 3452.00, 6900.00, 7590.10, 8012.99, 1290.00, 15000.00];
+
+const findIndex7500 = salarios.findIndex((index) => index > 7500)
+document.write(`Índice do primeiro salário maior que 7.500 >>> ${findIndex7500}<br>`)
+const filteredList = salarios.filter((salario) => salario > 8000)
+document.write(`Lista filtrada com os salários maiores que 8.000 >>> ${filteredList}`)
+
+</script>
+</html>
