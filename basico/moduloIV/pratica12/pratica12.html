@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prática 12 - 10 exercícios</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <p>
+        1. Imprima no console a quantidade de pessoas Total. <br>
+        2. Imprima no console a quantidade de pessoas pessoas do sexo
+        Feminino. <br>
+        3. Imprima no console a soma do salário de todas as pessoas. <br>
+        4. Imprima no console a média do salário de todas as pessoas. <br>
+        5. Imprima no console a soma do salário de todos as pessoas do sexo
+        Masculino. <br>
+        6. Imprima no console a média do salário de todas as pessoas do sexo
+        Masculino. <br>
+        7. Utilize a função Some, para descobrir se existe algum salário
+        superior a R$ 7.000, imprima verdadeiro no console caso exista, caso
+        contrário falso. <br>
+        8. Utilize a função findIndex, para descobrir a posição da pessoa de
+        nome 'Eva Trindade'. <br>
+        9. Utilize a função filter, para filtrar todas pessoas que o nome possua o
+        sobrenome "Silva". <br>
+        10. Imprima os nomes utilizando o MAP. <br><br>
+        RESULTADOS: <BR>
+    </p>
+</body>
+<script>
+    const data = [
+        {
+            nome: 'Roger Medeiros',
+            sexo: 'M',
+            salario: 3250,
+        },
+        {
+            nome: 'Carolina Silva',
+            sexo: 'F',
+            salario: 1200,
+        },
+        {
+            nome: 'Cristina Avila',
+            sexo: 'F',
+            salario: 8100,
+        },
+        {
+            nome: 'Gustavo Hoffman',
+            sexo: 'M',
+            salario: 5200.35,
+        },
+        {
+            nome: 'Eva Trindade',
+            sexo: 'F',
+            salario: 2501,
+        },
+        {
+            nome: 'Andre Mathias',
+            sexo: 'M',
+            salario: 1750,
+        },
+        {
+            nome: 'Joice Castro da Silva',
+            sexo: 'F',
+            salario: 3350.25,
+        },
+    ];
+
+    //1. Imprima no console a quantidade de pessoas Total.
+    function qtdPessoas() {
+        return document.write(`1. Há ${data.length} pessoas cadastradas no total! <br>`)
+    }
+    //2. Imprima no console a quantidade de pessoas pessoas do sexo Feminino.
+    function qtdPessoasF() {
+        const filtroF = data.filter(pessoa => pessoa.sexo === 'F')
+        const pessoasF = filtroF
+        return document.write(`2. Há ${pessoasF.length} pessoas do sexo feminino cadastradas! <br>`)
+    }
+    //3. Imprima no console a soma do salário de todas as pessoas.
+    function somaSalarios() {
+        let soma = 0
+        const mapSalarios = data.map(pessoa => soma += pessoa.salario)
+        return document.write(`3. A soma dos salários é R$${soma.toFixed(2)} <br>`)
+    }
+    //4. Imprima no console a média do salário de todas as pessoas.
+    function mediaSalarios() {
+        let soma = 0
+        const mapSalarios = data.map(pessoa => soma += pessoa.salario)
+        let media = soma / data.length
+        return document.write(`4. A média dos salários é R$${media.toFixed(2)} <br>`)
+    }
+    //5. Imprima no console a soma do salário de todos as pessoas do sexo Masculino.
+    function somaSalariosM() {
+        const filtroM = data.filter(pessoa => pessoa.sexo === 'M')
+        const pessoasM = filtroM
+        let soma = 0
+        const mapSalarios = pessoasM.map(pessoa => soma += pessoa.salario)
+        return document.write(`5. A soma dos salários do sexo masculino é R$${soma.toFixed(2)} <br>`)
+    }
+    //6. Imprima no console a média do salário de todas as pessoas do sexo Masculino.
+    function mediaSalariosM() {
+        const filtroM = data.filter(pessoa => pessoa.sexo === 'M')
+        const pessoasM = filtroM
+        let soma = 0
+        const mapSalarios = pessoasM.map(pessoa => soma += pessoa.salario)
+        let media = soma / pessoasM.length
+        return document.write(`6. A media dos salários do sexo masculino é R$${media.toFixed(2)} <br>`)
+    }
+    //7. Utilize a função Some, para descobrir se existe algum salário
+    // superior a R$ 7.000, imprima verdadeiro no console caso exista, caso
+    // contrário falso.
+    function salarioMaior7000() {
+        const salario = data.some(pessoa => pessoa.salario > 7000)
+        return document.write(`7. Existe algum salário superior a R$7.000,00? ${salario} <br>`)
+    }
+    //8. Utilize a função findIndex, para descobrir a posição da pessoa de nome 'Eva Trindade'.
+    function findIndexEva() {
+        const indice = data.findIndex(pessoa => pessoa.nome === 'Eva Trindade')
+        return document.write(`8. A posição da pessoa de nome 'Eva Trindade' é ${indice}. <br>`)
+    }
+    //9. Utilize a função filter, para filtrar todas pessoas que o nome possua o sobrenome "Silva".
+    function filtroSilva() {
+        let filtro = data.filter(pessoa => pessoa.nome.includes('Silva'))
+        document.write('9. Pessoas com o sobrenome Silva: ')
+        for (let i = 0; i < filtro.length; i++) {
+            document.write(`${filtro[i].nome}, `)
+        }
+
+    }
+    //10. Imprima os nomes utilizando o MAP.
+    function imprimirNomes() {
+        let imprimir = data.map(pessoa => pessoa.nome)
+        return document.write(`<br>10. Nomes de todas as pessoas: ${imprimir}.`)
+    }
+
+    qtdPessoas()
+    qtdPessoasF()
+    somaSalarios()
+    mediaSalarios()
+    somaSalariosM()
+    mediaSalariosM()
+    salarioMaior7000()
+    findIndexEva()
+    filtroSilva()
+    imprimirNomes()
+
+</script>
+
+</html>
