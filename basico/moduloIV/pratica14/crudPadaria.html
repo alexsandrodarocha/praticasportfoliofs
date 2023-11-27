@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padaria do Sr. João</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <button onclick="buttonMenu()">MENU</button><br>
+    </header>
+    
+</body>
+<script>
+    const produtos = [
+        {
+            id: 1,
+            nome: 'Pão',
+            estoque: 500,
+            preco: 0.50,
+        },
+        {
+            id: 2,
+            nome: 'Bolo',
+            estoque: 200,
+            preco: 4.00,
+        },
+        {
+            id: 3,
+            nome: 'Café',
+            estoque: 50,
+            preco: 2.50,
+        },
+    ]
+
+    const pedidos = []
+
+    function buttonMenu(){
+        menu()
+        return document.write(`<br><button onclick="buttonMenu()">MENU</button><br>`)
+    }
+
+    function menu() {
+        alert(`
+    Bem-vindo ao app da Padaria do Sr. João!
+    Opções:
+    1 - Listar produtos (simplificado)
+    2 - Listar produtos (por ordem de preço)
+    3 - Listar produtos (por ordem alfabética)
+    4 - Adicionar novo produto
+    5 - Editar produto
+    6 - Remover produto
+    7 - Receber pedidos
+    8 - Somar valor do estoque
+    9 - Relatório diário
+    10 - Sair
+    `)
+
+        let opcao = prompt('Digita a opção desejada: ')
+
+        switch (opcao) {
+            case "1":
+                listaSimplificada()
+                break;
+            case "2":
+                listaPreco()
+                break;
+            case "3":
+                listaAlfabetica()
+                break;
+            case "4":
+                adicionarProduto()
+                break;
+            case "5":
+                editarProduto()
+                break;
+            case "6":
+                removerProduto()
+                break;
+            case "7":
+                receberPedido()
+                break;
+            case "8":
+                valorEstoque()
+                break;
+            case "9":
+                relatorioDiario()
+                break;
+            case "10":
+                alert('App finalizado!')
+                break;
+            default:
+                alert('Opção inválida! Tente novamente.')
+                menu()
+                break;
+        }
+    }
+
+    let id = 0
+    function adicionarProduto() {
+        if (produtos.length) {
+            produtos.forEach(produto => {
+                id += produto.id
+            })
+        } else {
+            id = 1
+        }
+        produtos.push(
+            {
+                id: id,
+                nome: prompt('Nome do produto: '),
+                estoque: Number(prompt('Qtd em estoque: ')),
+                preco: Number(prompt('Preço do produto: ')),
+            }
+        )
+        menu()
+    }
+
+    function listaSimplificada() {
+        produtos.forEach(produto => document.write(`ID: ${produto.id}, Nome: ${produto.nome}, Estoque: ${produto.estoque} unidades, Preço: R$${produto.preco.toFixed(2)}<br>`))
+
+    }
+
+    function listaPreco() {
+        const listaFiltrada = produtos.sort((a, b) => a.preco - b.preco)
+        listaFiltrada.forEach(produto => document.write(`ID: ${produto.id}, Nome: ${produto.nome}, Estoque: ${produto.estoque} unidades, Preço: R$${produto.preco.toFixed(2)}<br>`))
+
+    }
+
+    function listaAlfabetica() {
+        produtos.sort(function (a, b) {
+            if (a.nome > b.nome) {
+                return 1
+            }
+            if (a.nome < b.nome) {
+                return -1
+            }
+            return 0
+        })
+        const listaFiltrada = produtos.sort((a, b) => a.nome > b.nome)
+        listaFiltrada.forEach(produto => document.write(`ID: ${produto.id}, Nome: ${produto.nome}, Estoque: ${produto.estoque} unidades, Preço: R$${produto.preco.toFixed(2)}<br>`))
+    }
+
+    function editarProduto() {
+        if (produtos.length === 0) {
+            alert(`Sem produtos em estoque! Adicione novos produtos.`)
+        } else {
+            let nomeEditar = prompt('Nome do produto que deseja editar: ')
+            let editarProduto = produtos.find(produto => produto.nome === nomeEditar)
+            if (editarProduto) {
+                editarProduto.nome = prompt('Novo nome do produto: ')
+                editarProduto.estoque = Number(prompt('Nova qtd em estoque: '))
+                editarProduto.preco = Number(prompt('Novo preço do produto: '))
+                alert("Produto editado com sucesso!")
+            } else {
+                alert("Produto não encontrado! Tente novamente.")
+            }
+        }
+        menu()
+    }
+
+    function removerProduto() {
+        let nomeRemover = prompt('Nome do produto que deseja remover: ')
+        let removerProduto = produtos.findIndex(produto => produto.nome === nomeRemover)
+        console.log(removerProduto)
+        if (removerProduto !== -1) {
+            produtos.splice(removerProduto, 1)
+            alert("Produto removido com sucesso!")
+        } else {
+            alert("Produto não encontrado! Tente novamente.")
+        }
+        menu()
+    }
+
+    function receberPedido() {
+
+        let cliente = prompt("Digite o nome do cliente:")
+        let data = new Date()
+        let pedido = { cliente, produtos: [], data: data.getTime() }
+
+        while (true) {
+            let nomeProduto = prompt("Informe o NOME do produto que você deseja, ou digite sair para finalizar o pedido: ")
+            if (nomeProduto === 'sair') {
+                break
+            }
+            let quantidade = parseInt(prompt("Quantidade desejada do produto: "))
+            let produto = produtos.find(produto => produto.nome === nomeProduto)
+            if (produto) {
+                if (produto.estoque >= quantidade) {
+                    produto.estoque -= quantidade
+                    pedido.produtos.push({ produto, quantidade })
+                } else {
+                    alert("Estoque insuficiente para este produto.")
+                }
+            } else {
+                alert("Produto não encontrado.")
+            }
+        }
+        pedidos.push(pedido)
+    }
+
+    function valorEstoque() {
+        let estoque = produtos.reduce((acc, produto) => {
+        return acc + (produto.estoque * produto.preco)
+    }, 0)
+    document.write(`Valor total do estoque: R$${estoque.toFixed(2)}<br>`)
+    }
+
+    function relatorioDiario() {
+        const dataInicial = new Date(prompt('Informe a data incial: ')).getTime()
+        const dataFinal = new Date(prompt('Informe a data final: ')).getTime()
+        let periodo = pedidos.filter(pedido => pedido.data >= dataInicial && pedido.data <= dataFinal)
+        let vendas = periodo.length
+        let faturamento = 0
+        periodo.forEach(pedidos => {
+        let preco = 0
+        pedidos.produtos.forEach(pedido => {
+         preco = pedido.preco
+        })
+        let multiplicacao = preco * pedidos.quantidade
+        faturamento += multiplicacao
+    })
+    document.write(`Total de vendas no período: ${vendas}<br>`)
+    document.write(`Faturamento total: R$${faturamento}<br>`)
+    }
+    
+    menu()
+
+
+</script>
+
+</html>
